@@ -1,3 +1,11 @@
+<label class="switch">
+    <input type="checkbox">
+    <span class="slider round" (click)="filterCompleted();"></span>
+    <p class="toggleText" *ngIf="toggleClicked">
+        completed
+    </p>
+</label>
+
 <table>
     <thead>
         <tr>
