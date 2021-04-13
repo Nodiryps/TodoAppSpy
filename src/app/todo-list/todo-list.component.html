@@ -1,3 +1,27 @@
-<ul>
-    <li *ngFor="let todo of todoList">{{todo.title}}</li>
-</ul>
+<table>
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th>Completed</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let todo of todoList">
+        <tr>
+            <td>
+                {{todo.id}}
+            </td>
+            <td>
+                {{todo.title}}
+            </td>
+            <td>
+                <div *ngIf="todo.completed; else elseBlock">
+                    <input type="checkbox" id="completed" name="completed" checked>
+                </div>
+                <ng-template #elseBlock>
+                    <input type="checkbox" id="notCompleted" name="notCompleted">
+                </ng-template>
+            </td>
+        </tr>
+    </tbody>
+</table>
