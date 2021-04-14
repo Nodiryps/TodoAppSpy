@@ -21,7 +21,7 @@ export class TodoListComponent implements OnInit {
 
   constructor(
     private todoService: TodoService) {
-    this.todoList = [];
+    this.todoList = this.todoService.todoList;
     this.toggleClicked = false;
   }
 

@@ -1,0 +1,11 @@
+<form [formGroup]="frmGrp">
+    <div class="form-group">
+        <label>
+            New Todo:
+            <input size="60px" placeholder="add a title (min 10 char.)" type="text" class="form-control"
+                [formControl]="newTodoTitle" required minlength="4">
+        </label>
+        <input type="submit" (click)="addNewTodo();" value="add" [disabled]="frmGrp.invalid">
+        <p class="error" *ngIf="newTodoTitle.touched && newTodoTitle.invalid">Invalid input</p>
+    </div>
+</form>
